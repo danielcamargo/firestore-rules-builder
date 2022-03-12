@@ -1,0 +1,23 @@
+{
+  "name": "firestore-rules-builder",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "src/index.js",
+  "author": "Daniel Teleginski Camargo",
+  "repository": "https://github.com/danielcamargo/firestore-rules-builder",
+  "homepage": "https://github.com/danielcamargo",
+  "scripts": {
+    "build": "node ./src/index.js"
+  },
+  "keywords": [
+    "firebase, firestore, rules"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+  },
+  "bin": {
+    "firestore-rules-builder": "./src/index.js"
+  }
+}
