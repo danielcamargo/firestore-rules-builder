@@ -16,6 +16,8 @@
     "access": "public"
   },
   "dependencies": {
+    "handlebars": "^4.7.7",
+    "indent-string": "^5.0.0"
   },
   "bin": {
     "firestore-rules-builder": "./src/index.js"

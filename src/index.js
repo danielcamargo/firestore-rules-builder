@@ -1,5 +1,8 @@
 const buildConfig = require('./utils/config.utils');
+const {buildRulesFile, buildTemplate, registerRuleFiles} = require('./utils/rules.utils');
 
 const config = buildConfig();
+registerRuleFiles(config);
+const template = buildTemplate();
 
-console.log('Ha', config);
+buildRulesFile(template, config);
