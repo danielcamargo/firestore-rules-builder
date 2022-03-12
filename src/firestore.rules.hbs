@@ -5,6 +5,5 @@ service cloud.firestore {
 
     match /databases/{database}/documents {
       {{>b.rules}}
-      {{>sub/c.rules}}
     }
 }

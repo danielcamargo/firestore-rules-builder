@@ -23,15 +23,15 @@ function _cleanRuleFile(buffer) {
         if (/^}/s.exec(line)) continue;
 
         let cleanLine = line;
+        // remove comment block of inclusion
+        cleanLine = cleanLine.replace(/^(\s*)\/\/({{)/s, '$1$2');
         // remove one indentation level
         cleanLine = cleanLine.replace(/^\s{4}/s, '');
 
         if (!cleanLine.length) continue;
         cleanLines.push(cleanLine);
     }
-    const final = cleanLines.join('\n').concat(`\n`);
-    console.log(final);
-    return final;
+    return cleanLines.join('\n').concat(`\n`);
 }
 
 function readdirRecursive(dir, subFolder = '', level = 0) {
@@ -54,7 +54,6 @@ function registerRuleFiles(config) {
     for (const fileName of rulesFolderFiles) {
         const fileBuffer = fs.readFileSync(path.join(config.rulesFolder, fileName));
         handlebars.registerPartial(fileName, _cleanRuleFile(fileBuffer));
-        console.log("Registering partial", fileName);
     }
 }
 
