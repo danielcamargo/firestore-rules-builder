@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const buildConfig = require('./utils/config.utils');
 const {buildRulesFile, buildTemplate, registerRuleFiles} = require('./utils/rules.utils');
 
